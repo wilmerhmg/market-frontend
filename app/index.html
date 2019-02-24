@@ -1,43 +1,254 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="AppMarket" class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="AppMarket" class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="AppMarket" class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="AppMarket" class="no-js">
+<!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <title>Marketplace - CondorLabs</title>
+    <base href="/">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/pace-js/themes/green/pace-theme-minimal.css">
+
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+
+    <link rel="stylesheet" href="app.css">
+
+    <!-- Just for debugging purposes. -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- include pace script for automatic web page progress bar  -->
+    <script>
+       paceOptions = {elements: true};
+    </script>
+    <script src="lib/pace-js/pace.min.js"></script>
+    <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/eb1ef31dc0.css" media="all">
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
+<div id="wrapper">
+    <!-- /.header -->
+    <div class="header">
+        <nav class="navbar fixed-top navbar-site navbar-light bg-light navbar-expand-md" role="navigation">
+            <!--/.nav-collapse -->
+            <div class="container">
+                <div class="navbar-identity">
+                    <a href="index.html" class="navbar-brand logo logo-title">
+                        <span class="logo-icon">
+                            <img src="assets/images/googles.png" class="img-logo">
+                        </span>MARKET<span> CondorLabs </span>
+                    </a>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggler pull-right" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+                            <title>Menu</title>
+                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path>
+                        </svg>
+                    </button>
+                    <button class="navbar-toggler btn btn-danger pull-right" type="button">
+                        &nbsp; <i class="fa fa-shopping-cart"></i> &nbsp;
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav ml-auto navbar-right">
+                        <li class="postadd nav-item">
+                            <a class="btn btn-block   btn-border btn-post btn-danger nav-link" href="#">
+                                <i class="fa fa-shopping-cart"></i> Cart (9+)
+                            </a>
+                        </li>
+                        <li class="dropdown  lang-menu nav-item">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                                <span class="lang-title">EN</span>
 
-  <div ng-view></div>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right user-menu" role="menu">
+                                <li class="dropdown-item">
+                                    <a class="active">
+                                        <span class="lang-name">English</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a>
+                                        <span class="lang-name">Dutch</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a>
+                                        <span class="lang-name">fran&#xE7;ais </span>
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a>
+                                        <span class="lang-name">Deutsch</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a>
+                                        <span class="lang-name">Arabic</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a>
+                                        <span class="lang-name">Spanish</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+    </div>
+    <!-- /.header -->
 
-  <div>AngularJS seed app: v<span app-version></span></div>
+    <!-- /.search-row -->
+    <div class="search-row-wrapper random-bg">
+        <div class="inner">
+            <div class="container" ng-include="'view.search/search.html'">
+            </div>
+        </div>
+    </div>
+    <!-- /.search-row -->
+    <!-- /.main-container -->
+    <div class="main-container">
+        <div class="container" ng-view>
+        </div>
+    </div>
+    <!-- /.main-container -->
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="core/version/version.js"></script>
-  <script src="core/version/version-directive.js"></script>
-  <script src="core/version/interpolate-filter.js"></script>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-xl-4 col-xl-4 col-md-4 col-12">
+                        <div class="footer-col row">
+                            <div class="col-sm-12 col-xs-6 col-xxs-12 no-padding-lg">
+                                <div class="mobile-app-content text-center">
+                                    <h4 class="footer-title">Mobile Apps</h4>
+                                    <div class="row ">
+                                        <div class="col-6  ">
+                                            <a class="app-icon" target="_blank" href="https://itunes.apple.com/">
+                                                <span class="hide-visually">iOS app</span>
+                                                <img src="images/site/app_store_badge.svg" alt="Available on the App Store">
+                                            </a>
+                                        </div>
+                                        <div class="col-6  ">
+                                            <a class="app-icon" target="_blank" href="https://play.google.com/store/">
+                                                <span class="hide-visually">Android App</span>
+                                                <img src="images/site/google-play-badge.svg" alt="Available on the App Store">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-xl-3 col-xl-3 col-md-2 col-6  ">
+                        <div class="footer-col text-center">
+                            <h4 class="footer-title">Payment Methods</h4>
+                            <div class="paymanet-method-logo">
+                                <img src="images/site/payment/master_card.png" alt="img">
+                                <img alt="img" src="images/site/payment/visa_card.png">
+                                <img alt="img" src="images/site/payment/paypal.png">
+                                <img alt="img" src="images/site/payment/american_express_card.png">
+                                <img alt="img" src="images/site/payment/discover_network_card.png">
+                                <img alt="img" src="images/site/payment/google_wallet.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-xl-2 col-md-2 col-6">
+                        <div class="footer-col">
+                            <h4 class="footer-title text-center">About us</h4>
+                            <ul class="list-unstyled footer-nav">
+                                <li>
+                                    <a href="https://github.com/Dev-Wito/market-backend" target="_blank">
+                                        <i class="fa fa-github"></i> GitHub Backend
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/Dev-Wito/market-frontend" target="_blank">
+                                        <i class="fa fa-github"></i> GitHub Frontend
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://app.swaggerhub.com/apis-docs/Dev-Wito/marketplace-backend/1.0.0" target="_blank">
+                                        <i class="fa fa-book"></i> Backend API Doc
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/Dev-Wito?tab=repositories" target="_blank">
+                                        <i class="fa fa-github"></i> Wilmer H. Muñoz
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-xl-3 col-md-3 col-12">
+                        <div class="hero-subscribe text-center">
+                            <h4 class="footer-title no-margin">Follow us on</h4>
+                            <ul class="list-unstyled list-inline footer-nav social-list-footer social-list-color footer-nav-inline">
+                                <li>
+                                    <a class="icon-color fb" title="Facebook" data-placement="top" data-toggle="tooltip" href="#"><i class="fa fa-facebook-f"></i>
+                                    </a></li>
+                                <li>
+                                    <a class="icon-color tw" title="Twitter" data-placement="top" data-toggle="tooltip" href="#"><i class="fa fa-twitter"></i>
+                                    </a></li>
+                                <li>
+                                    <a class="icon-color gp" title="Google+" data-placement="top" data-toggle="tooltip" href="#"><i class="fa fa-google-plus"></i>
+                                    </a></li>
+                                <li>
+                                    <a class="icon-color lin" title="Linkedin" data-placement="top" data-toggle="tooltip" href="#"><i class="fa fa-linkedin"></i>
+                                    </a></li>
+                                <li>
+                                    <a class="icon-color pin" title="Linkedin" data-placement="top" data-toggle="tooltip" href="#"><i class="fa fa-pinterest-p"></i>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="col-xl-12">
+                        <div class="copy-info text-center">
+                            &copy; 2019 Marketplace CondorLabs. All Rights Reserved.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /.footer -->
+</div>
+<script src="assets/js/jquery/jquery-3.3.1.min.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="lib/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="view.search/search.js"></script>
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+<script src="core/search/search.service.js"></script>
+<script src="core/categories/categories.service.js"></script>
+<script src="core/version/version.js"></script>
+<script src="core/version/version-directive.js"></script>
+<script src="core/version/interpolate-filter.js"></script>
 </body>
 </html>

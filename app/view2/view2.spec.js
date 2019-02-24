@@ -1,16 +1,15 @@
 'use strict';
 
-describe('AppMarket.view2 module', function() {
-
-  beforeEach(module('AppMarket.view2'));
-
-  describe('AppMarket view2 controller', function(){
-
-    it('should ....', inject(function($controller) {
-      //spec body
-      var view2Ctrl = $controller('AppMarketView2Ctrl');
-      expect(view2Ctrl).toBeDefined();
-    }));
-
-  });
+describe('AppMarket.view2 module', function () {
+   beforeEach(function () {
+      module('AppMarket.view2');
+      module('AppMarket.Search');
+   });
+   describe('AppMarket controller', function () {
+      //
+      it('should AppMarketView2Ctrl is defined', inject(function ($controller) {
+         var view1Ctrl = $controller('AppMarketView2Ctrl', {$scope: {}});
+         expect(view1Ctrl).toBeDefined();
+      }));
+   });
 });

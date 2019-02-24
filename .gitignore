@@ -63,3 +63,6 @@ typings/
 .idea
 package-lock.json
 dist
+app/lib
+app/assets
+app/images

@@ -1,0 +1,22 @@
+<form action="/" method="GET" ng-controller="SearchController">
+    <div class="row">
+        <div class="col-md-6">
+            <input class="form-control keyword" type="text" name="search" placeholder="e.g. smartphone samsung">
+        </div>
+        <div class="col-md-3">
+            <select class="form-control selecter" name="category" id="search-category">
+                <option selected="selected" value="">All Categories</option>
+                <optgroup ng-repeat="parent in Categories" ng-attr-label="{{parent.description}}" label="">
+                    <option ng-repeat="Category in parent.childs" ng-value="Category.id_category">
+                        {{Category.description}}
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-block btn-primary btn-gradient">
+                Search <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</form>

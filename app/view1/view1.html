@@ -1,1 +1,183 @@
-<p>This is the partial for view 1.</p>
+<div class="row">
+    <!-- this (.mobile-filter-sidebar) part will be position fixed in mobile version -->
+    <div class="col-md-3 page-sidebar mobile-filter-sidebar">
+        <aside>
+            <div class="sidebar-modern-inner">
+                <div class="block-title has-arrow sidebar-header">
+                    <h5><a href="#">All Categories</a></h5>
+                </div>
+                <!--/.categories-list-->
+                <div class="block-content categories-list  list-filter ">
+                    <ul class=" list-unstyled">
+                        <li>
+                            <a href="view2">
+                                <span class="title">Electronics</span> <span class="count">&nbsp;8626</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="title">Automobiles </span> <span class="count">&nbsp;123</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="title">Property </span> <span class="count">&nbsp;742</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="title">Services </span><span class="count">&nbsp;8525</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.categories-list-->
+                <!--/.price-range-->
+                <div class="block-title has-arrow">
+                    <h5><a href="#">Price range</a></h5>
+                </div>
+                <div class="block-content categories-list  list-filter ">
+                    <form class="text-center">
+                        <div class="row">
+                            <div class="col no-padding-right">
+                                <input type="text" class="form-control" placeholder="Min">
+                            </div>
+                            <div class="col no-padding-left no-padding">
+                                <input type="text" class="form-control" placeholder="Max">
+                            </div>
+                            <div class="col no-padding text-left">
+                                <button class="btn btn-default">
+                                    <i class="fa fa-filter"></i> Go!
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--/.price-range-->
+            </div>
+        </aside>
+    </div>
+    <!--/.page-side-bar-->
+    <div class="col-md-9 page-content col-thin-left">
+        <div class="category-list ">
+            <div class="tab-box ">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs add-tabs tablist" role="tablist">
+                    <li class="active nav-item">
+                        <a href="#alladslist" role="tab" data-toggle="tab" class="nav-link">
+                            Total <span class="badge badge-pill badge-secondary">997</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-filter">
+                    <select title="sort by" class="selectpicker select-sort-by" data-style="btn-select"
+                            data-width="auto">
+                        <option>Sort by</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Mobile Filter bar-->
+            <div class="mobile-filter-bar col-xl-12  ">
+                <ul class="list-unstyled list-inline no-margin no-padding">
+                    <li class="filter-toggle">
+                        <a class="">
+                            <i class="  icon-th-list"></i>
+                            Filters
+                        </a>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle">
+                                Short by
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">
+                                    <a href="#" rel="nofollow">Relevance</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#" rel="nofollow">Date</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#" rel="nofollow">Company</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-overly-mask"></div>
+            <!-- Mobile Filter bar End-->
+            <div class="tab-content">
+                <div class="tab-pane active " id="alladslist">
+                    <div class="adds-wrapper row no-margin">
+                        <!--/.item-list-->
+                        <div class="item-list" ng-repeat="item in [1,2,3]">
+                            <div class="row">
+                                <div class="col-md-2 no-padding photobox">
+                                    <div class="add-image">
+                                        <span class="photo-count">
+                                            <i class="fa fa-camera"></i> 2
+                                        </span>
+                                        <a href="ads-details.html">
+                                            <img class="thumbnail no-margin" src="images/item/tp/Image00023.jpg" alt="img">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--/.photobox-->
+                                <div class="col-sm-7 add-desc-box">
+                                    <div class="ads-details">
+                                        <h5 class="add-title">
+                                            <a href="#"> Fully functional iPhone 5s 32gb </a>
+                                        </h5>
+                                        <span class="info-row">
+                                            <span class="add-type business-ads tooltipHere" data-toggle="tooltip" data-placement="right" title="Private Ads">P </span>
+                                            <span class="date">
+                                                <i class=" icon-clock"> </i> Today 1:15 pm
+                                            </span> - <span class="category">Electronics </span> - <span class="item-location"><i class="fa fa-map-marker-alt"></i> New York </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--/.add-desc-box-->
+                                <div class="col-md-3 text-right  price-box">
+                                    <h2 class="item-price"> $ 35 </h2>
+                                    <a class="btn btn-default  btn-sm make-favorite">
+                                        <i class="fa fa-shopping-cart"></i> <span>Add</span>
+                                    </a>
+                                </div>
+                                <!--/.add-desc-box-->
+                            </div>
+                        </div>
+                        <!--/.item-list-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.pagination-bar-->
+        <div class="pagination-bar text-center">
+            <nav aria-label="Page navigation " class="d-inline-b">
+                <ul class="pagination">
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">...</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--/.pagination-bar-->
+    </div>
+    <!--/.page-content-->
+</div>
