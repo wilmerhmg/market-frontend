@@ -3,7 +3,7 @@
 angular
 .module('AppMarket.view2', ['ngRoute'])
 .config(['$routeProvider', function ($routeProvider) {
-   $routeProvider.when('/view2', {
+   $routeProvider.when('/viewTwo', {
       templateUrl: 'view2/view2.html',
       controller: 'AppMarketView2Ctrl'
    });

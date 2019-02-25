@@ -12,5 +12,5 @@ angular.module('AppMarket.view1', ['ngRoute'])
 
        .controller('AppMarketView1Ctrl', ['Search', 'Categories', '$scope', function (Search, Categories, $scope) {
           $scope.Categories = Categories.GetCategories();
-          Search.SetSearch('Computadores Cuanticos');
+          $scope.Category   = Search.GetCategory();
        }]);

@@ -6,9 +6,10 @@ angular.module('AppMarket', [
    'AppMarket.Categories',
    'AppMarket.Search',
    'AppMarket.SearchView',
-   'AppMarket.view1',
+   'AppMarket.ResultsView',
    'AppMarket.view2',
-   'AppMarket.version'
+   'AppMarket.version',
+   'AppMarket.MomentFilter'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
    $locationProvider.html5Mode({
       enabled: true,

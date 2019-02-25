@@ -701,6 +701,9 @@ button {
 .no-margin {
     margin: 0 !important;
 }
+.padding-top-30{
+    padding-top: 30px;
+}
 
 .no-padding {
     padding: 0 !important;

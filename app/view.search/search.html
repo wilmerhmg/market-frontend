@@ -1,13 +1,16 @@
-<form action="/" method="GET" ng-controller="SearchController">
+<form action="/" method="GET" ng-controller="SearchController" ng-submit="SubmitSearch($event)">
     <div class="row">
         <div class="col-md-6">
-            <input class="form-control keyword" type="text" name="search" placeholder="e.g. smartphone samsung">
+            <input class="form-control keyword"
+                   type="text" name="search"
+                   placeholder="e.g. smartphone samsung"
+                   ng-model="Query" ng-model-options="{debounce: 300}">
         </div>
         <div class="col-md-3">
-            <select class="form-control selecter" name="category" id="search-category">
+            <select class="form-control selecter" name="category" id="search-category" ng-model="Category">
                 <option selected="selected" value="">All Categories</option>
                 <optgroup ng-repeat="parent in Categories" ng-attr-label="{{parent.description}}" label="">
-                    <option ng-repeat="Category in parent.childs" ng-value="Category.id_category">
+                    <option ng-repeat="Category in parent.childs" value="{{Category.id_category}}">
                         {{Category.description}}
                     </option>
                 </optgroup>

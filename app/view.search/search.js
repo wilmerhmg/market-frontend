@@ -6,10 +6,37 @@ angular.module('AppMarket.SearchView', [])
           'Categories',
           '$scope',
           '$timeout',
-          function (Search, Categories, $scope, $timeout) {
-             $scope.Categories = [];
-             Categories.OnLoad = function () {
-                $scope.Categories = Categories.GetCategories();
-             };
-          }
+          '$location',
+          SearchController
        ]);
+
+function SearchController(Search, Categories, $scope, $timeout, $location) {
+   $scope.Categories = [];
+   $scope.Query      = Search.GetSearch();
+   $scope.Category   = Search.GetCategory();
+
+   $scope.$watch('Category', function MutationCategory(newVal, oldVal) {
+      Search.SetCategory(newVal);
+   });
+
+   $scope.$watch('Query', function MutationQuery(newVal, oldVal) {
+      Search.SetSearch(newVal);
+   });
+
+   $scope.SubmitSearch = function SubmitSearch(e) {
+      e.preventDefault();
+      let Query = {
+         category: Search.GetCategory(),
+         limit: Search.GetLimit(),
+         price_min: Search.GetPriceMin(),
+         price_max: Search.GetPriceMax(),
+         search: Search.GetSearch(),
+         offset: Search.GetOffset()
+      };
+      $location.search(Query);
+   };
+
+   Categories.OnLoad = function OnLoad() {
+      $scope.Categories = Categories.GetCategories();
+   };
+}

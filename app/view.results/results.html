@@ -34,17 +34,17 @@
                 <div class="block-title has-arrow">
                     <h5><a href="#">Price range</a></h5>
                 </div>
-                <div class="block-content categories-list  list-filter ">
-                    <form class="text-center">
+                <div class="block-content categories-list list-filter">
+                    <form class="text-center" action="/" ng-submit="SubmitPriceFilter($event)">
                         <div class="row">
                             <div class="col no-padding-right">
-                                <input type="text" class="form-control" placeholder="Min">
+                                <input type="text" class="form-control" ng-model="price_min" placeholder="Min">
                             </div>
                             <div class="col no-padding-left no-padding">
-                                <input type="text" class="form-control" placeholder="Max">
+                                <input type="text" class="form-control" ng-model="price_max" placeholder="Max">
                             </div>
                             <div class="col no-padding text-left">
-                                <button class="btn btn-default">
+                                <button class="btn btn-default" type="submit">
                                     <i class="fa fa-filter"></i> Go!
                                 </button>
                             </div>
@@ -63,55 +63,16 @@
                 <ul class="nav nav-tabs add-tabs tablist" role="tablist">
                     <li class="active nav-item">
                         <a href="#alladslist" role="tab" data-toggle="tab" class="nav-link">
-                            Total <span class="badge badge-pill badge-secondary">997</span>
+                            Total <span class="badge badge-pill badge-secondary">{{Articles.total|number:0}}</span>
                         </a>
                     </li>
                 </ul>
-                <div class="tab-filter">
-                    <select title="sort by" class="selectpicker select-sort-by" data-style="btn-select"
-                            data-width="auto">
-                        <option>Sort by</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                    </select>
-                </div>
             </div>
-            <!-- Mobile Filter bar-->
-            <div class="mobile-filter-bar col-xl-12  ">
-                <ul class="list-unstyled list-inline no-margin no-padding">
-                    <li class="filter-toggle">
-                        <a class="">
-                            <i class="  icon-th-list"></i>
-                            Filters
-                        </a>
-                    </li>
-                    <li>
-                        <div class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle">
-                                Short by
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item">
-                                    <a href="#" rel="nofollow">Relevance</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a href="#" rel="nofollow">Date</a>
-                                </li>
-                                <li class="dropdown-item">
-                                    <a href="#" rel="nofollow">Company</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="menu-overly-mask"></div>
-            <!-- Mobile Filter bar End-->
             <div class="tab-content">
-                <div class="tab-pane active " id="alladslist">
+                <div class="tab-pane active" id="alladslist">
                     <div class="adds-wrapper row no-margin">
                         <!--/.item-list-->
-                        <div class="item-list" ng-repeat="item in [1,2,3]">
+                        <div class="item-list" ng-repeat="item in Articles.rows">
                             <div class="row">
                                 <div class="col-md-2 no-padding photobox">
                                     <div class="add-image">
@@ -119,7 +80,7 @@
                                             <i class="fa fa-camera"></i> 2
                                         </span>
                                         <a href="ads-details.html">
-                                            <img class="thumbnail no-margin" src="images/item/tp/Image00023.jpg" alt="img">
+                                            <img class="thumbnail no-margin" ng-src="{{item.preview}}" alt="img">
                                         </a>
                                     </div>
                                 </div>
@@ -127,19 +88,18 @@
                                 <div class="col-sm-7 add-desc-box">
                                     <div class="ads-details">
                                         <h5 class="add-title">
-                                            <a href="#"> Fully functional iPhone 5s 32gb </a>
+                                            <a href="#"> {{item.title}} </a>
                                         </h5>
                                         <span class="info-row">
-                                            <span class="add-type business-ads tooltipHere" data-toggle="tooltip" data-placement="right" title="Private Ads">P </span>
                                             <span class="date">
-                                                <i class=" icon-clock"> </i> Today 1:15 pm
-                                            </span> - <span class="category">Electronics </span> - <span class="item-location"><i class="fa fa-map-marker-alt"></i> New York </span>
+                                                <i class=" icon-clock"> </i> {{item.createdAt|moment:'fromNow'}}
+                                            </span> - <span class="category">{{item["Category.description"]}} </span>
                                         </span>
                                     </div>
                                 </div>
                                 <!--/.add-desc-box-->
                                 <div class="col-md-3 text-right  price-box">
-                                    <h2 class="item-price"> $ 35 </h2>
+                                    <h2 class="item-price"> {{item.price|currency:"$":0}} </h2>
                                     <a class="btn btn-default  btn-sm make-favorite">
                                         <i class="fa fa-shopping-cart"></i> <span>Add</span>
                                     </a>
@@ -148,6 +108,18 @@
                             </div>
                         </div>
                         <!--/.item-list-->
+                    </div>
+                    <div class="row col-12" ng-if="!Articles.rows.length">
+                        <div class="col-sm-6">
+                            <img src="assets/images/sin-resultados.jpg" alt="No records found" class="img-responsive">
+                        </div>
+                        <div class="col-sm-6 padding-top-30">
+                            <h3>No results found</h3>
+                            <p>
+                                We found 0 results for "{{search}}"
+                                Use fewer keywords or try these instead
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
