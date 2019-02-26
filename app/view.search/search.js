@@ -34,6 +34,7 @@ function SearchController(Search, Categories, $scope, $timeout, $location) {
          offset: Search.GetOffset()
       };
       $location.search(Query);
+      $location.path('/');
    };
 
    Categories.OnLoad = function OnLoad() {

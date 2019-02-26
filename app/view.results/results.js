@@ -31,6 +31,7 @@ function ResultsController(Search, $scope, $location) {
          offset: Search.GetOffset()
       };
       $location.search(Query);
+      $location.path('/');
    };
 
    $scope.$watch('price_max', function PriceMaxMutation(newVal, oldVal) {

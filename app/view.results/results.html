@@ -79,7 +79,7 @@
                                         <span class="photo-count">
                                             <i class="fa fa-camera"></i> 2
                                         </span>
-                                        <a href="ads-details.html">
+                                        <a ng-href="#!/article/{{item.id_post}}">
                                             <img class="thumbnail no-margin" ng-src="{{item.preview}}" alt="img">
                                         </a>
                                     </div>
@@ -88,7 +88,7 @@
                                 <div class="col-sm-7 add-desc-box">
                                     <div class="ads-details">
                                         <h5 class="add-title">
-                                            <a href="#"> {{item.title}} </a>
+                                            <a ng-href="#!/article/{{item.id_post}}"> {{item.title}} </a>
                                         </h5>
                                         <span class="info-row">
                                             <span class="date">

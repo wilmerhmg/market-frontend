@@ -1,0 +1,153 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb" role="navigation" class="pull-left">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="icon-home fa"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">All Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{Article.Category.description}}</li>
+                </ol>
+            </nav>
+            <div class="pull-right backtolist">
+                <a href="#">
+                    <i class="fa fa-angle-double-left"></i> Back to Results
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 page-content col-thin-right">
+            <div class="inner inner-box ads-details-wrapper">
+                <h2>
+                    {{Article.title}}
+                </h2>
+                <span class="info-row">
+                    <span class="date">
+                        <i class=" icon-clock"> </i> {{Article.createdAt|moment:'fromNow'}}
+                    </span> -
+                    <span class="category">
+                        {{Article.Category.description}}
+                    </span>
+                </span>
+
+                <div class="ads-image">
+                    <h1 class="pricetag"> {{Article.price|currency:"$":0}}</h1>
+                    <div class="bx-wrapper" style="max-width: 100%;">
+                        <div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 0px;">
+                            <ul class="bxslider" style="width: 3215%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                                <li style="float: left; list-style: none; position: relative; width: 0px;" class="bx-clone" aria-hidden="true" ng-repeat="Pic in Article.Pictures">
+                                    <img ng-src="{{Pic.thumbnail}}" alt="img">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bx-controls bx-has-controls-direction">
+                            <div class="bx-controls-direction">
+                                <a class="bx-prev" href="">Prev</a>
+                                <a class="bx-next" href="">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--ads-image-->
+
+                <div class="Ads-Details">
+                    <h5 class="list-title"><strong>Ads Detsils</strong></h5>
+                    <div class="row">
+                        <div class="ads-details-info col-md-8 text-justify">
+                            <p>{{Article.description}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <aside class="panel panel-body panel-details">
+                                <ul>
+                                    <li>
+                                        <p class=" no-margin ">
+                                            <strong>Price:</strong> {{Article.price|currency:"$":0}}
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="no-margin">
+                                            <strong>Type:</strong> {{Article.Category.description}}
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="no-margin">
+                                            <strong>Stock:</strong> {{Article.stock|number:0}}
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class=" no-margin ">
+                                            <strong>Available:</strong> {{Article.active?'Yes':'No'}}
+                                        </p>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                    <div class="content-footer text-left">
+                        <a class="btn  btn-default" data-toggle="modal" href="#contactAdvertiser">
+                            <i class="fa fa-shopping-cart"></i> Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--/.ads-details-wrapper-->
+        </div>
+        <!--/.page-content-->
+        <div class="col-md-3  page-sidebar-right">
+            <aside>
+                <div class="card card-user-info sidebar-card">
+                    <div class="block-cell user">
+                        <div class="cell-media">
+                            <img src="https://picsum.photos/120/120/?random" alt="">
+                        </div>
+                        <div class="cell-content">
+                            <h5 class="title">xxxxx</h5>
+                            <span class="name"><a href="#">xxxx xxxx xxx </a></span>
+                            <span class="rating">xxxx xxx</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body text-left">
+                            <div class="grid-col">
+                                <div class="col from">
+                                    <span>Xxxxxx</span>
+                                </div>
+                                <div class="col to">
+                                    <span>XXXX</span>
+                                </div>
+                            </div>
+                            <div class="grid-col">
+                                <div class="col from">
+                                    <span>Xxxxx</span>
+                                </div>
+                                <div class="col to">
+                                    <span>XXXXXX</span>
+                                </div>
+                            </div>
+                            <div class="grid-col">
+                                <div class="col from">
+                                    <span>XXXXX</span>
+                                </div>
+                                <div class="col to">
+                                    <span>X XXX X xX</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ev-action">
+                            <a class="btn btn-success btn-block" data-toggle="modal" href="#">
+                                <i class=" icon-mail-2"></i> xxxxxxxxxx
+                            </a>
+                            <a class="btn  btn-info btn-block">
+                                <i class=" icon-phone-1"></i> xxxxxxxxxxx
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.categories-list-->
+            </aside>
+        </div>
+        <!--/.page-side-bar-->
+    </div>
+</div>
