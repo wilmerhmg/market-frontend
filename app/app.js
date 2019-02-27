@@ -6,12 +6,15 @@ angular.module('AppMarket', [
    'AppMarket.Article',
    'AppMarket.Categories',
    'AppMarket.Search',
+   'AppMarket.ShoppingCart',
    'AppMarket.SearchView',
    'AppMarket.ResultsView',
    'AppMarket.ArticleView',
    'AppMarket.view2',
    'AppMarket.version',
-   'AppMarket.MomentFilter'
+   'AppMarket.MomentFilter',
+   'AppMarket.galleryDirective',
+   'AppMarket.galleryDirectiveCtrl'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
    /*$locationProvider.html5Mode({
       enabled: true,

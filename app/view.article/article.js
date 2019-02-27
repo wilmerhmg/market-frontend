@@ -11,10 +11,11 @@ angular.module('AppMarket.ArticleView', ['ngRoute'])
           '$scope',
           '$routeParams',
           'Article',
+          'Cart',
           ArticleController
        ]);
 
-function ArticleController($scope, $routeParams, Article) {
+function ArticleController($scope, $routeParams, Article, Cart) {
    $scope.Article = {};
 
    Article.GetInto($routeParams.id);
@@ -22,4 +23,8 @@ function ArticleController($scope, $routeParams, Article) {
    Article.OnLoad = function OnLoad() {
       $scope.Article = Article.GetArticle();
    };
+
+   $scope.Add = Cart.AddArticle;
+
+
 }

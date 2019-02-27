@@ -1,23 +1,5 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <nav aria-label="breadcrumb" role="navigation" class="pull-left">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#"><i class="icon-home fa"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#">All Articles</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{Article.Category.description}}</li>
-                </ol>
-            </nav>
-            <div class="pull-right backtolist">
-                <a href="#">
-                    <i class="fa fa-angle-double-left"></i> Back to Results
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
         <div class="col-md-9 page-content col-thin-right">
             <div class="inner inner-box ads-details-wrapper">
                 <h2>
@@ -34,26 +16,12 @@
 
                 <div class="ads-image">
                     <h1 class="pricetag"> {{Article.price|currency:"$":0}}</h1>
-                    <div class="bx-wrapper" style="max-width: 100%;">
-                        <div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 0px;">
-                            <ul class="bxslider" style="width: 3215%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-                                <li style="float: left; list-style: none; position: relative; width: 0px;" class="bx-clone" aria-hidden="true" ng-repeat="Pic in Article.Pictures">
-                                    <img ng-src="{{Pic.thumbnail}}" alt="img">
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bx-controls bx-has-controls-direction">
-                            <div class="bx-controls-direction">
-                                <a class="bx-prev" href="">Prev</a>
-                                <a class="bx-next" href="">Next</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!--ads-image-->
 
                 <div class="Ads-Details">
-                    <h5 class="list-title"><strong>Ads Detsils</strong></h5>
+                    <gallery pictures="Article.Pictures"></gallery>
+                    <h5 class="list-title"><strong>Article Detsils</strong></h5>
                     <div class="row">
                         <div class="ads-details-info col-md-8 text-justify">
                             <p>{{Article.description}}</p>
@@ -86,9 +54,9 @@
                         </div>
                     </div>
                     <div class="content-footer text-left">
-                        <a class="btn  btn-default" data-toggle="modal" href="#contactAdvertiser">
+                        <button class="btn  btn-default" data-toggle="modal" ng-click="Add(Article)">
                             <i class="fa fa-shopping-cart"></i> Add to Cart
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
