@@ -11,6 +11,14 @@ npm start
 
 Now browse to the app at `http://localhost:14000/index.html`.
 
+### Run Unit Test
+The simplest way to start
+this server is:
+
+```
+npm test
+```
+
 ### About
 This is the source code of the frontend in the technical test for entry into [CondorLabs](https://condorlabs.io)
 the technologies used are the following:
