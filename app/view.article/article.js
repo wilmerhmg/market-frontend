@@ -26,5 +26,9 @@ function ArticleController($scope, $routeParams, Article, Cart) {
 
    $scope.Add = Cart.AddArticle;
 
+   $scope.InCart = function InCart() {
+      let CartArticles = Cart.GetArticles();
+      return CartArticles.filter(i => i.id_post === $routeParams.id).length;
+   };
 
 }

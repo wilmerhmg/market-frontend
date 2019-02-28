@@ -20,5 +20,17 @@ angular.module('AppMarket.ShoppingCart', []).service('Cart', ['$http', function 
       localStorage.setItem('shopping-cart', JSON.stringify(c));
    };
 
+   this.LoadFromStore = () => {
+      cart = JSON.parse(localStorage.getItem('shopping-cart')) || cart;
+      return this.GetArticles();
+   };
+
+   this.RemoveArticle = (item) => {
+      let Index = cart.articles.map(i => i.id_post).indexOf(item.id_post);
+      cart.articles.splice(Index, 1);
+   };
+
+   this.LoadFromStore();
+
    return this;
 }]);

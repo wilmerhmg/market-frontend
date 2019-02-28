@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 page-content col-thin-right">
+            <div class="inner inner-box ads-details-wrapper">
+                <h2>
+                    Shopping Cart
+                </h2>
+                <span class="info-row"></span>
+                <div class="Ads-Details" ng-if="Articles.length">
+                    <div class="item-list">
+                        <div class="row">
+                            <div class="col-sm-9"></div>
+                            <div class="col-sm-2">Price</div>
+                            <div class="col-sm-1">Quantity</div>
+                        </div>
+                    </div>
+                    <div class="item-list" ng-repeat="item in Articles">
+                        <div class="row">
+                            <div class="col-sm-2 no-padding photobox">
+                                <div class="add-image">
+                                    <a ng-href="#!/article/{{item.id_post}}">
+                                        <img class="thumbnail no-margin" ng-src="{{item.preview}}" alt="img">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--/.photobox-->
+                            <div class="col-sm-7 add-desc-box">
+                                <div class="ads-details">
+                                    <h5 class="add-title">
+                                        <a ng-href="#!/article/{{item.id_post}}"> {{item.title}} </a>
+                                    </h5>
+                                    <span class="info-row">
+                                        <span class="date">{{item.createdAt|moment:'fromNow'}}</span> -
+                                        <span class="category">{{item.Category.description}}</span> -
+                                        <span class="stock">{{item.stock|number:0}} in stock</span>
+                                    </span>
+                                    <div class="row">
+                                        <a role="button" ng-click="Remove(item)">
+                                            <i class="fa fa-trash"></i> Remove item
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.add-desc-box-->
+                            <div class="col-sm-2  price-box">
+                                <h2 class="item-price"> {{item.price|currency:"$":0}} </h2>
+                            </div>
+                            <div class="col-sm-1 text-center  price-box">
+                                <input type="number" min="1" class="form-control form-control-sm" ng-init="item.Quantity=1" ng-model="item.Quantity">
+                            </div>
+                            <!--/.add-desc-box-->
+                        </div>
+                    </div>
+                    <div class="item-list">
+                        <div class="row">
+                            <div class="col-12 text-right">
+                                <h3>Total: {{TotalCart()|number:0}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Ads-Details" ng-if="!Articles.length">
+                    <h2>Your Shopping Cart is empty.</h2>
+                    <p>
+                        Your Shopping Cart lives to serve. Give it purpose — smartphone, smartwatch, and more.
+                    </p>
+                </div>
+            </div>
+            <!--/.ads-details-wrapper-->
+        </div>
+    </div>
+</div>

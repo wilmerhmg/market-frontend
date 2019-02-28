@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-9 page-content col-thin-right">
+        <div class="col-md-12 page-content col-thin-right">
             <div class="inner inner-box ads-details-wrapper">
                 <h2>
                     {{Article.title}}
@@ -15,16 +15,14 @@
                 </span>
 
                 <div class="ads-image">
-                    <h1 class="pricetag"> {{Article.price|currency:"$":0}}</h1>
+                    <h1 class="pricetag">Only {{Article.price|currency:"$":0}}</h1>
                 </div>
                 <!--ads-image-->
 
                 <div class="Ads-Details">
-                    <gallery pictures="Article.Pictures"></gallery>
-                    <h5 class="list-title"><strong>Article Detsils</strong></h5>
                     <div class="row">
-                        <div class="ads-details-info col-md-8 text-justify">
-                            <p>{{Article.description}}</p>
+                        <div class="col-md-8">
+                            <gallery pictures="Article.Pictures"></gallery>
                         </div>
                         <div class="col-md-4">
                             <aside class="panel panel-body panel-details">
@@ -53,69 +51,23 @@
                             </aside>
                         </div>
                     </div>
+                    <h5 class="list-title"><strong>DESCRIPTION</strong></h5>
+                    <div class="row">
+                        <div class="ads-details-info col-md-8 text-justify">
+                            <p>{{Article.description}}</p>
+                        </div>
+                    </div>
                     <div class="content-footer text-left">
-                        <button class="btn  btn-default" data-toggle="modal" ng-click="Add(Article)">
-                            <i class="fa fa-shopping-cart"></i> Add to Cart
+                        <button class="btn  btn-yellow" data-toggle="modal" ng-click="Add(Article)" ng-if="!InCart()">
+                            <i class="fa fa-shopping-cart"></i> Add to cart
                         </button>
+                        <a class="btn   btn-border btn-post btn-yellow nav-link" href="#!/cart" ng-if="InCart()">
+                            ..<i class="fa fa-shopping-cart"></i> Cart
+                        </a>
                     </div>
                 </div>
             </div>
             <!--/.ads-details-wrapper-->
         </div>
-        <!--/.page-content-->
-        <div class="col-md-3  page-sidebar-right">
-            <aside>
-                <div class="card card-user-info sidebar-card">
-                    <div class="block-cell user">
-                        <div class="cell-media">
-                            <img src="https://picsum.photos/120/120/?random" alt="">
-                        </div>
-                        <div class="cell-content">
-                            <h5 class="title">xxxxx</h5>
-                            <span class="name"><a href="#">xxxx xxxx xxx </a></span>
-                            <span class="rating">xxxx xxx</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body text-left">
-                            <div class="grid-col">
-                                <div class="col from">
-                                    <span>Xxxxxx</span>
-                                </div>
-                                <div class="col to">
-                                    <span>XXXX</span>
-                                </div>
-                            </div>
-                            <div class="grid-col">
-                                <div class="col from">
-                                    <span>Xxxxx</span>
-                                </div>
-                                <div class="col to">
-                                    <span>XXXXXX</span>
-                                </div>
-                            </div>
-                            <div class="grid-col">
-                                <div class="col from">
-                                    <span>XXXXX</span>
-                                </div>
-                                <div class="col to">
-                                    <span>X XXX X xX</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ev-action">
-                            <a class="btn btn-success btn-block" data-toggle="modal" href="#">
-                                <i class=" icon-mail-2"></i> xxxxxxxxxx
-                            </a>
-                            <a class="btn  btn-info btn-block">
-                                <i class=" icon-phone-1"></i> xxxxxxxxxxx
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!--/.categories-list-->
-            </aside>
-        </div>
-        <!--/.page-side-bar-->
     </div>
 </div>

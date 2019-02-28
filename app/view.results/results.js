@@ -9,14 +9,15 @@ angular.module('AppMarket.ResultsView', ['ngRoute'])
        }])
        .controller('ResultsController', [
           'Search',
+          'Cart',
           '$scope',
           '$location',
           ResultsController
        ]);
 
-function ResultsController(Search, $scope, $location) {
+function ResultsController(Search, Cart, $scope, $location) {
    $scope.Articles  = [];
-   $scope.search = Search.GetSearch();
+   $scope.search    = Search.GetSearch();
    $scope.price_min = Search.GetPriceMin();
    $scope.price_max = Search.GetPriceMax();
 
@@ -34,6 +35,11 @@ function ResultsController(Search, $scope, $location) {
       $location.path('/');
    };
 
+   $scope.InCar = function InCar(item){
+      let CartArticles = Cart.GetArticles();
+      return CartArticles.filter(i => i.id_post === item.id_post).length;
+   };
+
    $scope.$watch('price_max', function PriceMaxMutation(newVal, oldVal) {
       Search.SetPriceMax(newVal);
    });
@@ -45,6 +51,8 @@ function ResultsController(Search, $scope, $location) {
    $scope.FindArticles = function FindArticles(response) {
       $scope.Articles = response.data;
    };
+
+   $scope.AddCart = Cart.AddArticle;
 
    Search.FindArticles($scope.FindArticles);
 }

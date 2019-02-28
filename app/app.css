@@ -4004,7 +4004,7 @@ nav.slider-nav a.next {
 }
 
 .random-bg {
-    background-image: url(https://picsum.photos/1398/300/?blur&random);
+    background-image: url(assets/images/bg.jpeg);
 }
 
 .search-row-wrapper .inner {
@@ -4017,6 +4017,12 @@ nav.slider-nav a.next {
 
 .search-row-wrapper .btn-primary {
     line-height: 22px;
+}
+
+.btn-yellow{
+    color: #000;
+    background-color: #ffd500;
+    border-color: #e0c44f;
 }
 
 @media screen and (min-width: 1024px) {

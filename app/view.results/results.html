@@ -10,7 +10,7 @@
                 <div class="block-content categories-list  list-filter ">
                     <ul class=" list-unstyled">
                         <li>
-                            <a href="viewTwo">
+                            <a href="#">
                                 <span class="title">Electronics</span> <span class="count">&nbsp;8626</span>
                             </a>
                         </li>
@@ -100,7 +100,7 @@
                                 <!--/.add-desc-box-->
                                 <div class="col-md-3 text-right  price-box">
                                     <h2 class="item-price"> {{item.price|currency:"$":0}} </h2>
-                                    <a class="btn btn-default  btn-sm make-favorite">
+                                    <a class="btn btn-default  btn-sm make-favorite" ng-click="AddCart(item)" ng-if="!InCar(item)">
                                         <i class="fa fa-shopping-cart"></i> <span>Add</span>
                                     </a>
                                 </div>
@@ -124,32 +124,6 @@
                 </div>
             </div>
         </div>
-        <!--/.pagination-bar-->
-        <div class="pagination-bar text-center">
-            <nav aria-label="Page navigation " class="d-inline-b">
-                <ul class="pagination">
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">4</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">...</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <!--/.pagination-bar-->
     </div>
     <!--/.page-content-->
 </div>

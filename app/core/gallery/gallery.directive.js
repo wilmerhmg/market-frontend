@@ -228,6 +228,6 @@ angular.module('AppMarket.galleryDirectiveCtrl', []).controller('galleryControll
             autoWidth: true,
          });
          initPhotoSwipeFromDOM(`.${$scope.uid}`);
-      },100)
+      },1000);
    };
 }]);

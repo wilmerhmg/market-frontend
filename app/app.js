@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and core components
 angular.module('AppMarket', [
    'ngRoute',
+   'AppMarket.CartView',
    'AppMarket.Article',
    'AppMarket.Categories',
    'AppMarket.Search',
